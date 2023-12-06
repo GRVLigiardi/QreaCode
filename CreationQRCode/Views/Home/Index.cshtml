@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link href="~/css/site.css" rel="stylesheet">
+</head>
+<body>
+    <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="display-4 text-fluorescent-green mb-5">QR Code Generator</h1>
+        <div class="text-center">
+            @using (Html.BeginForm("Generate", "Qr", FormMethod.Post, new { @class = "form-inline" }))
+            {
+                <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">HERE →</span>
+                    <input class="form-control" type="text" name="text">
+                    <button class="btn btn-primary" type="submit" formtarget="_blank">Generate QR</button>
+                </div>
+            }
+            <p class="text-fluorescent-green">
+                Enter your URL and click on GENERATE QR. A new tab will open, and you will have access to your QR code.
+                This site is completely free, and you can generate as many QR codes as you want.
+                For this reason, an advertisement will open during your QR code generation. Thank you for your understanding.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
